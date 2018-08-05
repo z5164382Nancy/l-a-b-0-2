@@ -22,7 +22,16 @@ fib_dict = {
 # Define this recursive function to return the expected output
 # Do not print it from this function
 def fib_sequence(num):
-	# to be completed
+	if num == 0:
+		return 0
+	elif num == 1:
+		return 1
+	else:
+		fib_dict[num] = fib_dict[num-1] + fib_dict[num-2]
 	return fib_dict[num]
 
 #write code to accept user input, call the function and print the result
+if __name__ == '__main__':
+	print("User is running this file")
+else:
+	print("User is not running this file")

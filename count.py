@@ -10,16 +10,48 @@
 
 def count_char(text):
     pass
-    # add your code here
-
+    
+    dictionary = {}
+    
+    for i in text:
+        if i not in dictionary:
+            dictionary[i] = 0
+        dictionary[i] += 1
+    
+    for j in dictionary:
+        print(j + ' ' + str(dictionary[j]))
+    
+    
 def count_char_insensitive(text):
     pass
-    # add your code here
+    
+    dictionary = {}
+    
+    for i in text.casefold():
+        if i not in dictionary:
+            dictionary[i] = 0
+        dictionary[i] += 1
+    
+    for j in dictionary:
+        print(j + ' ' + str(dictionary[j]))
 
 # bonus task:
 def count_char_ordered(text):
     pass
-    # add your code here 
+    
+    dictionary = {}
+    
+    for i in text.casefold():
+        if i not in dictionary:
+            dictionary[i] = 0
+        dictionary[i] += 1
+    
+    for j in dictionary:
+    
+    
+    
+    for k in sorted_dictionary:
+        print(j + ' ' + str(dictionary[j]))
 
 text1 = 'I felt happy because I saw the others were happy and because I knew I should feel happy but I wasn’t really happy' # Robert Bolano
 text2 = 'HellO, WorLd!'
