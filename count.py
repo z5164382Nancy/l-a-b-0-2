@@ -46,12 +46,10 @@ def count_char_ordered(text):
             dictionary[i] = 0
         dictionary[i] += 1
     
-    for j in dictionary:
+    sorted_dictionary = sorted(((value, key) for (key,value) in dictionary.items()), reverse = True)
     
-    
-    
-    for k in sorted_dictionary:
-        print(j + ' ' + str(dictionary[j]))
+    for j in sorted_dictionary:
+        print(j[1] + ' ' + str(j[0]))
 
 text1 = 'I felt happy because I saw the others were happy and because I knew I should feel happy but I wasn’t really happy' # Robert Bolano
 text2 = 'HellO, WorLd!'
