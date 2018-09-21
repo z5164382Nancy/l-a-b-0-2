@@ -1,6 +1,12 @@
 from count import *
 
 '''
+run: python3 -m pytest <filename>
+sets the project path to the current directory
+'''
+
+
+'''
 Source for one test case: https://10fastfingers.com/text/119-A-simple-Paragraph-to-practice-simple-typing
 '''
 
@@ -94,8 +100,33 @@ class Checker():
         assert s1 == s2
 
     def check_ordered(self, output):
-        o_buffer = ''
+        l1 = self._buffer.split('\n')
+
+        s1 = []
+        s2 = []
+        for line in l1:
+            
+            if ' ' not in line:
+                break
+            
+            char, count = line.rsplit(' ', 1)
+            item = (char, int(count))
+
+            if s1 and next(iter(s1[-1]))[1] == int(count):
+                s1[-1].add(item)
+
+            else:
+                s1.append(set())
+                s1[-1].add(item)
+                
         for char, count in output:
-            o_buffer += f'{char} {count}\n'
-        
-        assert self._buffer == o_buffer
+            item = (char, count)
+
+            if s2 and next(iter(s2[-1]))[1] == count:
+                s2[-1].add(item)
+
+            else:
+                s2.append(set())
+                s2[-1].add(item)
+
+        assert s1 == s2
